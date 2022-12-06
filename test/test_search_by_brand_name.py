@@ -15,5 +15,5 @@ class TestSearchByBrandName(AbstractTest):
         self.searchResultPage = self.amazonMainPage.click_search_button()
         assert self.searchResultPage.is_page_opened(), "Search result page isn't opened"
         assert self.searchResultPage.get_product_number() > 0, "There are no products"
-        assert self.searchResultPage.check_product_title(brand_name), "Current product doesn't contain brand name in " \
-                                                                      "search field"
+        assert self.searchResultPage.check_product_title(brand_name), \
+            "Current product doesn't contain brand name in search field"

@@ -18,15 +18,11 @@ class SearchResultPage(AbstractPage):
 
     def check_product_title(self, match_word):
         product_titles = self.driver.find_elements(By.XPATH, "//span[@data-component-type = 's-search-results']")
-        answer = False
-        for title in product_titles:
-            title = (str(title.text)).lower()
-            if title.__contains__(match_word):
-                answer = True
-            else:
-                answer = False
-                break
-        return answer
+        webelements_to_text = list(map(lambda x: x.text, product_titles))
+        lower_list = list(map(lambda x: x.lower(), webelements_to_text))
+        list_of_containing_values = list(filter(lambda x: match_word in x, lower_list))
+        return True if len(product_titles) == len(list_of_containing_values) else False
+
 
 
 

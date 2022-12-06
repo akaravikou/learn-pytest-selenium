@@ -25,6 +25,5 @@ def check_value_in_list(value, list_of_values):
     return True if len(list_of_values) == len(list_of_containing_values) else False
 
 
-
 answer = check_value_in_list(word, vals)
 print(answer)
