@@ -4,3 +4,4 @@ class TestData:
     EMAIL = "antontenix@gmail.com"
     PASSWORD = "experiment"
     USERNAME = "Anton"
+    ENDPOINT = 'https://todo.pixegami.io'
