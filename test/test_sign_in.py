@@ -1,10 +1,12 @@
+import pytest
+
 from config.config import TestData
 from page.amazonMainPage import AmazonMainPage
 from test.abstract_test import AbstractTest
 
 
 class TestSignIn(AbstractTest):
-
+    @pytest.mark.sanity
     def test_sign_in(self):
         self.amazonMainPage = AmazonMainPage(self.driver)
         self.amazonMainPage.open_page()

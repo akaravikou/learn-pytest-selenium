@@ -5,7 +5,7 @@ from test.abstract_test import AbstractTest
 
 
 class TestSearchByBrandName(AbstractTest):
-
+    @pytest.mark.sanity
     @pytest.mark.parametrize("brand_name", ["apple", "sony", "samsung", "dell", "intel"])
     def test_search_by_brand_name(self, brand_name):
         self.amazonMainPage = AmazonMainPage(self.driver)
