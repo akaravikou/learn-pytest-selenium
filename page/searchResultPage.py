@@ -3,12 +3,17 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from selenium.webdriver.support import expected_conditions as EC
 
+from components.header import Header
 from page.abstractPage import AbstractPage
 
 
 class SearchResultPage(AbstractPage):
     INFO_BAR = (By.XPATH, "//*[@data-component-type = 's-result-info-bar']")
     SEARCHED_RESULT_LIST = (By.XPATH, "//span[@data-component-type = 's-search-results']")
+
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.header = Header(self.driver)
 
     def is_page_opened(self):
         return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.INFO_BAR)).is_displayed()
